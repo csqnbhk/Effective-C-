@@ -1,73 +1,75 @@
 /**************************************************************
-     function£º²âÊÔÒ»ÏÂ"Effective C++"¸ÃÊéµÚÒ»ÕÂ
-	           È«²¿ÄÚÈİÀ´×Ô¸ÃÊé¡£
-	 author£ºDemon
+     functionï¼šæµ‹è¯•ä¸€ä¸‹"Effective C++"è¯¥ä¹¦ç¬¬ä¸€ç« 
+	           å…¨éƒ¨å†…å®¹æ¥è‡ªè¯¥ä¹¦ã€‚
+	 authorï¼šDemon
 	 Time:2017/10/29
 ***************************************************************/
 
 #include<iostream>
 using namespace std;
-//¡ñrule one:View C++ as a federation languages
-
-//¶¨Òåclass ×¨Êô³£Á¿,ÓÃconst»òÕßenum(²»¿ÉÒÔÈ¡Ò»¸öenumµØÖ·£©
-
-//¡ñPrefer const,enum and inline to #define
+//â—rule 1:View C++ as a federation languages
 
 
-//¡ñUse const whenever possible
-   
 
-//¡ñMake sure that the objects are initialized before they are used
+//â—rule 2ï¼šPrefer const,enum and inline to #define
+
+
+//â—rule 3ï¼šUse const whenever possible
+  
+
+//â—rule 4ï¼šMake sure that the objects are initialized before they are used
 
 int main()
 {
 
-	//¡ïrule one:View C++ as a federation languages
+	//â˜…View C++ as a federation languages
 	
 
-	//¡ïPrefer const,enum and inline to #define
+	//â˜…Prefer const,enum and inline to #define
 	/*
-	1.¶ÔÓÚµ¥´¿µÄ³£Á¿£¬×îºÃÓÃconst»òÕßenumÌæ´ú#define
-	2.ÌØÊâÇé¿ö1£º¶¨Òå³£Á¿Ö¸Õë£¬³£Á¿¶¨ÒåÍ¨³£·ÅÔÚÍ·ÎÄ¼şÖĞ£¬(ÒÔ±ã±»²»Í¬µÄÔ´Âë°üº¬£©
-	  ÓĞ±ØÒª½«Ö¸ÕëºÍÖ¸ÕëËùÖ¸Ö®ÎïÉùÃ÷Îªconst¡£
-	char const* const p = "Ğ¡½á½Ú";
-	ÌØÊâÇé¿ö2£º¶¨Òåclass ×¨Êô³£Á¿
-	3.¶ÔÓÚĞÎÊ½º¯ÊıµÄºê£¬×îºÃ¸ÄÓÃinlineÌæ´ú#define
+	1.å¯¹äºå•çº¯çš„å¸¸é‡ï¼Œæœ€å¥½ç”¨constæˆ–è€…enumæ›¿ä»£#define
+	2.ç‰¹æ®Šæƒ…å†µ1ï¼šå®šä¹‰å¸¸é‡æŒ‡é’ˆï¼Œå¸¸é‡å®šä¹‰é€šå¸¸æ”¾åœ¨å¤´æ–‡ä»¶ä¸­ï¼Œ(ä»¥ä¾¿è¢«ä¸åŒçš„æºç åŒ…å«ï¼‰
+	  æœ‰å¿…è¦å°†æŒ‡é’ˆå’ŒæŒ‡é’ˆæ‰€æŒ‡ä¹‹ç‰©å£°æ˜ä¸ºconstã€‚
+	char const* const p = "å°ç»“èŠ‚";
+	ç‰¹æ®Šæƒ…å†µ2ï¼šå®šä¹‰class ä¸“å±å¸¸é‡ï¼Œç”¨constæˆ–è€…enum(ä¸å¯ä»¥å–ä¸€ä¸ªenumåœ°å€ï¼‰
+	3.å¯¹äºå½¢å¼å‡½æ•°çš„å®ï¼Œæœ€å¥½æ”¹ç”¨inlineæ›¿ä»£#define
 	*/
 
-	//¡ïUse const whenever possible
+	//â˜…Use const whenever possible
 	/*
-	    1.¾¡¿ÉÄÜÊ¹ÓÃconst£¨±ÈÈçoperator*£¬·µ»ØÖµ¿ÉÒÔ¼Ó¸öconst£©
-	    Ô­Òò£º½«Ä³Ğ©¶«Î÷ÉùÃ÷Îªconst£¬¿ÉÒÔ°ïÖú±àÒëÆ÷Õì²â³ö´íÎó¡£
-		      const¿ÉÒÔ±»Ê©¼ÓÓÚÈÎºÎ×÷ÓÃÓòÄÚµÄ¶ÔÏó£¬º¯Êı²ÎÊı£¬
-			  º¯Êı·µ»ØÖµ£¬³ÉÔ±º¯ÊıµÈµÈ¡£
-	    2.µ±constºÍnon-const³ÉÔ±º¯ÊıÓĞ×ÅÊµÖÊµÈ¼ÛµÄÊµÏÖÊ±£¬Áî
-		  non-const±¾°æ³ÉÔ±º¯Êıµ÷ÓÃconst±¾°æ³ÉÔ±º¯Êı¿ÉÒÔ±ÜÃâ
-		  ´úÂëÖØ¸´¡£
+	    1.å°½å¯èƒ½ä½¿ç”¨constï¼ˆæ¯”å¦‚operator*ï¼Œè¿”å›å€¼å¯ä»¥åŠ ä¸ªconstï¼‰
+	    åŸå› ï¼šå°†æŸäº›ä¸œè¥¿å£°æ˜ä¸ºconstï¼Œå¯ä»¥å¸®åŠ©ç¼–è¯‘å™¨ä¾¦æµ‹å‡ºé”™è¯¯ã€‚
+		      constå¯ä»¥è¢«æ–½åŠ äºä»»ä½•ä½œç”¨åŸŸå†…çš„å¯¹è±¡ï¼Œå‡½æ•°å‚æ•°ï¼Œ
+			  å‡½æ•°è¿”å›å€¼ï¼Œæˆå‘˜å‡½æ•°ç­‰ç­‰ã€‚
+	    2.å½“constå’Œnon-constæˆå‘˜å‡½æ•°æœ‰ç€å®è´¨ç­‰ä»·çš„å®ç°æ—¶ï¼Œä»¤
+		  non-constæœ¬ç‰ˆæˆå‘˜å‡½æ•°è°ƒç”¨constæœ¬ç‰ˆæˆå‘˜å‡½æ•°å¯ä»¥é¿å…
+		  ä»£ç é‡å¤ã€‚
 	*/
 
-	//¡ïMake sure that the objects are initialized before they are used
+	//â˜…Make sure that the objects are initialized before they are used
 	/*
-	   1.ÎªÄÚÖÃÀàĞÍ½øĞĞÊÖ¹¤³õÊ¼»¯£¬ÒòÎªC++²»±£Ö¤³õÊ¼»¯ËüÃÇ¡£
-	   2.¹¹Ôìº¯Êı×îºÃÊ¹ÓÃ³ÉÔ±³õÊ¼ÖµÁĞ£¬¶ø²»ÒªÔÚ¹¹Ôìº¯ÊıÖĞÊ¹ÓÃ
-	     ¸³Öµ²Ù×÷¡£×¢Òâ£º³õÊ¼»¯ÁĞÁĞ³öµÄ³ÉÔ±±äÁ¿ÆäÅÅĞòÓ¦¸Ã
-		 ºÍËüÃÇÔÚclassµÄÉùÃ÷Ë³ĞòÏàÍ¬µÄ¡£
-	   3.ÎªÁË±ÜÃâ¡°¿ç±àÒëµ¥ÔªÖ®³õÊ¼»¯´ÎĞò"ÎÊÌâ£¬ÓÃlocal static¶ÔÏó
-	     Ìæ´únon-local static
+	   1.ä¸ºå†…ç½®ç±»å‹è¿›è¡Œæ‰‹å·¥åˆå§‹åŒ–ï¼Œå› ä¸ºC++ä¸ä¿è¯åˆå§‹åŒ–å®ƒä»¬ã€‚
+	   2.æ„é€ å‡½æ•°æœ€å¥½ä½¿ç”¨æˆå‘˜åˆå§‹å€¼åˆ—ï¼Œè€Œä¸è¦åœ¨æ„é€ å‡½æ•°ä¸­ä½¿ç”¨
+	     èµ‹å€¼æ“ä½œã€‚æ³¨æ„ï¼šåˆå§‹åŒ–åˆ—åˆ—å‡ºçš„æˆå‘˜å˜é‡å…¶æ’åºåº”è¯¥
+		 å’Œå®ƒä»¬åœ¨classçš„å£°æ˜é¡ºåºç›¸åŒçš„ã€‚
+	   3.ä¸ºäº†é¿å…â€œè·¨ç¼–è¯‘å•å…ƒä¹‹åˆå§‹åŒ–æ¬¡åº"é—®é¢˜ï¼Œç”¨local staticå¯¹è±¡
+	     æ›¿ä»£non-local static
 
-		 ±àÒëµ¥Ôª1.
+		 ç¼–è¯‘å•å…ƒ1.
 		 class A
 		 {
+		    public:
 		    int GetID();
 		 };
-		 extern A a;         //²»ºÃĞ´·¨
-		 static extern A a; //ÕâÑù×ÓĞ´£¬ÓÃlocal static¶ÔÏóÌæ´únon-locak static
-		 ±àÒëµ¥Ôª.
+		 extern A a;         //ä¸å¥½å†™æ³•
+		 static extern A a; //è¿™æ ·å­å†™ï¼Œç”¨local staticå¯¹è±¡æ›¿ä»£non-local static
+		 ç¼–è¯‘å•å…ƒ.
 		 class B
 		 {
+		   public:
 		   int flag=a.GetID();
 		 };
 	*/
-	cout << "ÊÕ¹¤ÊÕ¹¤" << endl;
+	cout << "æ”¶å·¥æ”¶å·¥" << endl;
 	return 0;
 }
