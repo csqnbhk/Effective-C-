@@ -63,7 +63,7 @@ int main()
 		 };
 		 extern A a;         //不好写法
 		 static extern A a; //这样子写，用local static对象替代non-local static
-		 编译单元.
+		 编译单元2.
 		 class B
 		 {
 		   public:
